@@ -80,5 +80,8 @@ async def delay(user, channel):
     await asyncio.sleep(delay_time[channel.id])
     overwrite.send_messages = True
     await client.edit_channel_permissions(channel, user, overwrite)
-
-client.run('Mjg5NDEzNTUxMjc2Mjk0MTQ0.C6VXhQ.LI3Vc816XmR5hbAZPzZ2iaYJZV4')
+    
+token_file = open('token', 'r')
+token = token_file.read()
+token_file.close()
+client.run(token)
